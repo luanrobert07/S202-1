@@ -1,5 +1,6 @@
 from typing import Collection
 import pymongo # pip install pymongo
+from dataset import dataset
 
 
 class Database:
@@ -20,7 +21,7 @@ class Database:
             print(e)
 
     def resetDatabase(self):
-        try:
+        try: 
             self.db.drop_collection(self.collection)
             self.collection.insert_many(dataset)
             print("Banco de dados resetado com sucesso!")
